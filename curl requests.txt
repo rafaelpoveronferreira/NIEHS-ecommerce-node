@@ -1,0 +1,46 @@
+admin ID: 638f7d12aeb53492e772224d
+admin JWT token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzOGY3ZDEyYWViNTM0OTJlNzcyMjI0ZCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY3MDUzODg4NywiZXhwIjoxNjcyMjY2ODg3fQ.2iifH4NOxgtk-oyWrCG2UTrFwIhrWK2LHSLXMEg3CKQ
+
+shirt ID 63926af7af729d43f7649743
+pant ID 63927fe793a17e86626ce7bd
+
+curl -X GET localhost:5000/user/find/638e004145ee73fcf7655215 -H 'token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzOGY3ZDEyYWViNTM0OTJlNzcyMjI0ZCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY3MDM0OTIxOH0.xkvXSQTSwD-Liy8b2aM5_Hk-uolRhf9DlV0Zmz2Ys0k'
+curl -X POST localhost:5000/auth/login -H 'Content-Type: application/json' -d '{"username":"admin", "password":"admin"}'
+
+
+Atualizar produto
+curl -X PUT localhost:5000/product/63926af7af729d43f7649743 -H 'Content-Type: application/json' -d '{
+    "title":"Basic full placket shirt", 
+    "img": 2, 
+    "desc":"Casual shirt. Made of Polyester. Short sleeve", 
+    "categories":["shirt"], 
+    "size":["XL", "L", "M"], 
+    "color":["green", "black", "blue"], 
+    "price":"1580", 
+    "inStock":"true"
+    }' -H 'token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzOGY3ZDEyYWViNTM0OTJlNzcyMjI0ZCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY3MDUzODg4NywiZXhwIjoxNjcyMjY2ODg3fQ.2iifH4NOxgtk-oyWrCG2UTrFwIhrWK2LHSLXMEg3CKQ'
+
+curl -X PUT localhost:5000/product/63927fe793a17e86626ce7bd -H 'Content-Type: application/json' -d '{
+    "title":"Basic pants", 
+    "img": 2, 
+    "desc":"Casual pants. Made of Polyester.", 
+    "categories":["pants", "loungewear"], 
+    "size":["XL", "M"], 
+    "color":["beige", "blue"], 
+    "price":"2050", 
+    "inStock":"true"
+    }' -H 'token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzOGY3ZDEyYWViNTM0OTJlNzcyMjI0ZCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY3MDUzODg4NywiZXhwIjoxNjcyMjY2ODg3fQ.2iifH4NOxgtk-oyWrCG2UTrFwIhrWK2LHSLXMEg3CKQ'
+
+
+
+Adicionar produto
+curl -X POST localhost:5000/product/ -H 'Content-Type: application/json' -d '{
+    "title":{"pt-BR":"Camisa", "en-US": "Shirt"}, 
+    "img": 2, 
+    "desc":{"pt-BR":"Oficial nike", "en-US": "Nike original"}, 
+    "categories":["shirt", "sports"], 
+    "size": ["M", "S"], 
+    "color":["gray"], 
+    "price":"3000", 
+    "stock": 12
+    }' --cookie "token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzYjVmNWY3ODQ3Yjg3ZTljZGM0ZjI3MSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY3Mjg3Nzk3OSwiZXhwIjoxNjc0NjA1OTc5fQ.SpbYB5h40o77iWQGDbBT9wFbPBuZHbCw0pNC8J_jJWw"
