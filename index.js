@@ -1,12 +1,18 @@
 const express = require('express');
 const app = express();
 
+const dotenv = require('dotenv');
+dotenv.config();
+
+// Helmet middleware
+const helmet = require("helmet");
+app.use(helmet());
+
+// CORS middleware
 const cors = require('cors')
 const corsOptions = require('./corsOptions')
 app.use(cors(corsOptions))
 
-const dotenv = require('dotenv');
-dotenv.config();
 const mongoose = require('mongoose');
 
 var cookies = require("cookie-parser");

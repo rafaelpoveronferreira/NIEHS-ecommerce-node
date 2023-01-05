@@ -1,13 +1,3 @@
-admin ID: 638f7d12aeb53492e772224d
-admin JWT token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzOGY3ZDEyYWViNTM0OTJlNzcyMjI0ZCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY3MDUzODg4NywiZXhwIjoxNjcyMjY2ODg3fQ.2iifH4NOxgtk-oyWrCG2UTrFwIhrWK2LHSLXMEg3CKQ
-
-shirt ID 63926af7af729d43f7649743
-pant ID 63927fe793a17e86626ce7bd
-
-curl -X GET localhost:5000/user/find/638e004145ee73fcf7655215 -H 'token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzOGY3ZDEyYWViNTM0OTJlNzcyMjI0ZCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY3MDM0OTIxOH0.xkvXSQTSwD-Liy8b2aM5_Hk-uolRhf9DlV0Zmz2Ys0k'
-curl -X POST localhost:5000/auth/login -H 'Content-Type: application/json' -d '{"username":"admin", "password":"admin"}'
-
-
 Atualizar produto
 curl -X PUT localhost:5000/product/63926af7af729d43f7649743 -H 'Content-Type: application/json' -d '{
     "title":"Basic full placket shirt", 
@@ -18,8 +8,9 @@ curl -X PUT localhost:5000/product/63926af7af729d43f7649743 -H 'Content-Type: ap
     "color":["green", "black", "blue"], 
     "price":"1580", 
     "inStock":"true"
-    }' -H 'token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzOGY3ZDEyYWViNTM0OTJlNzcyMjI0ZCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY3MDUzODg4NywiZXhwIjoxNjcyMjY2ODg3fQ.2iifH4NOxgtk-oyWrCG2UTrFwIhrWK2LHSLXMEg3CKQ'
+    }' --cookie "token=JWT ADMIN TOKEN"
 
+Criar Produto
 curl -X PUT localhost:5000/product/63927fe793a17e86626ce7bd -H 'Content-Type: application/json' -d '{
     "title":"Basic pants", 
     "img": 2, 
@@ -29,8 +20,7 @@ curl -X PUT localhost:5000/product/63927fe793a17e86626ce7bd -H 'Content-Type: ap
     "color":["beige", "blue"], 
     "price":"2050", 
     "inStock":"true"
-    }' -H 'token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzOGY3ZDEyYWViNTM0OTJlNzcyMjI0ZCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY3MDUzODg4NywiZXhwIjoxNjcyMjY2ODg3fQ.2iifH4NOxgtk-oyWrCG2UTrFwIhrWK2LHSLXMEg3CKQ'
-
+    }' --cookie "token=JWT ADMIN TOKEN"
 
 
 Adicionar produto
@@ -43,4 +33,4 @@ curl -X POST localhost:5000/product/ -H 'Content-Type: application/json' -d '{
     "color":["gray"], 
     "price":"3000", 
     "stock": 12
-    }' --cookie "token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzYjVmNWY3ODQ3Yjg3ZTljZGM0ZjI3MSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY3Mjg3Nzk3OSwiZXhwIjoxNjc0NjA1OTc5fQ.SpbYB5h40o77iWQGDbBT9wFbPBuZHbCw0pNC8J_jJWw"
+    }' --cookie "token=JWT ADMIN TOKEN"
