@@ -31,8 +31,9 @@ const WHITELIST = [
     'http://localhost:4173',
     'http://localhost:4174']
 
-app.use((req, res) => {
+app.use((req, res,next) => {
     res.header("Access-Control-Allow-Origin", WHITELIST.some(e=>e==req.header.origin)?req.header.origin:'')
+    next()
 })
 
 
