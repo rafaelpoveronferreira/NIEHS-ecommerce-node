@@ -19,6 +19,11 @@ const WHITELIST = [
 
 // CORS dinâmico
 const corsOptions = {
+  origin: WHITELIST,
+  credentials: true}
+
+/*
+const corsOptions = {
   origin: (origin, callback) => {
   if (WHITELIST.some(e=> e==origin) || !origin) {
     console.log(origin+' is allowed')
@@ -28,6 +33,6 @@ const corsOptions = {
     }
   },
   credentials: true}
-
+*/
 
 module.exports = corsOptions
