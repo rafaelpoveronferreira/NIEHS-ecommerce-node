@@ -32,8 +32,9 @@ const WHITELIST = [
     'http://localhost:4174']
 
 app.use((req, res,next) => {
-    console.log(req.header.origin)
+    console.log(req.headers.origin)
     res.header("Access-Control-Allow-Origin", req.headers.origin)
+    res.header("Access-Control-Allow-Credentials", true)
     next()
 })
 
