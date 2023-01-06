@@ -14,7 +14,7 @@ const WHITELIST = [
     '54.187.216.72',
     'http://localhost:5173',
     'http://localhost:5174',
-    'https://rafaelpoveronferreira.github.io/NIEHS-ecommerce-react/']
+    'https://rafaelpoveronferreira.github.io/NIEHS-ecommerce-react']
 
 // CORS dinâmico
 const corsOptions = {
