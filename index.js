@@ -9,9 +9,9 @@ const helmet = require("helmet");
 app.use(helmet());
 
 // CORS middleware
-const cors = require('cors')
-const corsOptions = require('./corsOptions')
-app.use(cors(corsOptions))
+//const cors = require('cors')
+//const corsOptions = require('./corsOptions')
+//app.use(cors(corsOptions))
 const WHITELIST = [
     '3.18.12.63',
     '3.130.192.231',
@@ -33,7 +33,7 @@ const WHITELIST = [
 
 app.use((req, res,next) => {
     console.log(req.headers.origin)
-    res.header("Access-Control-Allow-Origin", req.headers.origin)
+    res.header("Access-Control-Allow-Origin", WHITELIST.some(e=>e.includes(req.headers.origin))?req.headers.origin:false)
     res.header("Access-Control-Allow-Credentials", true)
     next()
 })
