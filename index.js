@@ -35,7 +35,7 @@ app.use((req, res,next) => {
     console.log(req.headers.origin)
     res.header("Access-Control-Allow-Origin", WHITELIST.some(e=>e.includes(req.headers.origin))?req.headers.origin:false)
     res.header("Access-Control-Allow-Credentials", true)
-    res.header("Access-Control-Request-Headers", "content-type")
+    res.header("Access-Control-Allow-Headers", "content-type")
     next()
 })
 
