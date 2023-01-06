@@ -11,7 +11,7 @@ app.use(helmet());
 // CORS middleware
 const cors = require('cors')
 const corsOptions = require('./corsOptions')
-app.use(cors(corsOptions))
+app.use(cors())
 
 const mongoose = require('mongoose');
 
