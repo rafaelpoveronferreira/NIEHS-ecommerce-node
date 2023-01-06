@@ -33,7 +33,7 @@ const WHITELIST = [
 
 app.use((req, res,next) => {
     console.log(req.header.origin)
-    res.header("Access-Control-Allow-Origin", req.header.origin)
+    res.header("Access-Control-Allow-Origin", req.headers.origin)
     next()
 })
 
