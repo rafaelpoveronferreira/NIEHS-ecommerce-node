@@ -46,8 +46,9 @@ router.post('/login', async (req, res) => {
 
         //, 
         res.cookie('token', webToken, {httpOnly: true,
+             secure: true,
              expires: new Date(Date.now() + 100000000000),
-             sameSite: 'lax'})
+             sameSite: 'none'})
              .status(200)
         console.log(res.getHeader('set-cookie'))
         res.send({...others});
@@ -72,7 +73,8 @@ router.post('/logout', (req, res) => {
     // assim garantindo uma camada adicional de segurança, server-sided
     res.cookie('token', null, {
         httpOnly: true,
-        sameSite: 'lax',
+        sameSite: 'none',
+        secure: true,
         maxAge: -1,
         });
 
