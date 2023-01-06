@@ -12,6 +12,7 @@ const WHITELIST = [
     '54.187.174.169',
     '54.187.205.235',
     '54.187.216.72',
+    'https://rafaelpoveronferreira.github.io/NIEHS-ecommerce-react',
     'http://localhost:5173',
     'http://localhost:5174',
     'https://rafaelpoveronferreira.github.io/NIEHS-ecommerce-react']
